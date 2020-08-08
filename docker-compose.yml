@@ -1,0 +1,27 @@
+version : '3'
+
+services:
+   selinium_hub_service:
+      image: selenium/hub
+      container_name: selenium_hub_container
+      ports : 
+         - "4444:4444"
+    #  environment:
+     #    GRID_MAX_SESSION: 3
+         
+   selinium_chrome_node_service:
+      image: selenium/node-chrome
+      container_name: selenium_chrome_node_container
+      depends_on: 
+         - "selinium_hub_service"
+      ports : 
+         - "5555:5555"
+      environment:
+         HUB_HOST: selinium_hub_service
+         NODE_MAX_INSTANCES: 10
+         NODE_MAX_SESSION: 10
+
+      
+
+
+   

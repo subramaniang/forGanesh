@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite" parallel="tests">
+	<!-- <parameter name="url" value="http://leaftaps.com/opentaps/control/main"></parameter> -->
+	<!-- <test name="Test"> -->
+	<test thread-count="3" name="Test" verbose="5" parallel="classes">
+		<classes>
+			<class name="testcases.VerifyHomePage" />
+			<!-- <class name="testcases.VerifyHomePage2" />
+			<class name="testcases.VerifyHomePage3" /> -->
+		</classes>
+	</test> <!-- Test -->
+</suite> <!-- Suite -->
